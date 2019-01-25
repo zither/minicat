@@ -19,18 +19,18 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            style="@style/ProfileItemStyle"
-            android:id="@+id/item1">
+            android:id="@+id/item1"
+            style="@style/ProfileItemStyle">
 
             <TextView
                 android:id="@+id/text_title1"
-                android:text="990"
-                style="@style/ProfileItemTextStyle" />
+                style="@style/ProfileItemTextStyle"
+                android:text="990" />
 
             <TextView
                 android:id="@+id/text_value1"
-                android:text="Statuses Count"
-                style="@style/ProfileItemTextMetaStyle" />
+                style="@style/ProfileItemTextMetaStyle"
+                android:text="Statuses Count" />
         </LinearLayout>
 
         <View
@@ -39,18 +39,18 @@
             android:background="@drawable/divider" />
 
         <LinearLayout
-            style="@style/ProfileItemStyle"
-            android:id="@+id/item2">
+            android:id="@+id/item2"
+            style="@style/ProfileItemStyle">
 
             <TextView
                 android:id="@+id/text_title2"
-                android:text="1234"
-                style="@style/ProfileItemTextStyle" />
+                style="@style/ProfileItemTextStyle"
+                android:text="1234" />
 
             <TextView
                 android:id="@+id/text_value2"
-                android:text="Statuses Count"
-                style="@style/ProfileItemTextMetaStyle" />
+                style="@style/ProfileItemTextMetaStyle"
+                android:text="Statuses Count" />
         </LinearLayout>
 
     </LinearLayout>
@@ -67,18 +67,18 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            style="@style/ProfileItemStyle"
-            android:id="@+id/item3">
+            android:id="@+id/item3"
+            style="@style/ProfileItemStyle">
 
             <TextView
                 android:id="@+id/text_title3"
-                android:text="990"
-                style="@style/ProfileItemTextStyle" />
+                style="@style/ProfileItemTextStyle"
+                android:text="990" />
 
             <TextView
                 android:id="@+id/text_value3"
-                android:text="Statuses Count"
-                style="@style/ProfileItemTextMetaStyle" />
+                style="@style/ProfileItemTextMetaStyle"
+                android:text="Statuses Count" />
         </LinearLayout>
 
         <View
@@ -87,18 +87,18 @@
             android:background="@drawable/divider" />
 
         <LinearLayout
-            style="@style/ProfileItemStyle"
-            android:id="@+id/item4">
+            android:id="@+id/item4"
+            style="@style/ProfileItemStyle">
 
             <TextView
                 android:id="@+id/text_title4"
-                android:text="1234"
-                style="@style/ProfileItemTextStyle" />
+                style="@style/ProfileItemTextStyle"
+                android:text="1234" />
 
             <TextView
                 android:id="@+id/text_value4"
-                android:text="Statuses Count"
-                style="@style/ProfileItemTextMetaStyle" />
+                style="@style/ProfileItemTextMetaStyle"
+                android:text="Statuses Count" />
         </LinearLayout>
 
     </LinearLayout>

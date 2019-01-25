@@ -1,52 +1,58 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile 'com.android.support:support-v4:22.2.1'
+    implementation 'com.android.support:support-v4:22.2.1'
 
-    compile('com.google.code.gson:gson:2.6.2')
+    implementation('com.google.code.gson:gson:2.6.2')
 
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
-    compile 'de.hdodenhof:circleimageview:2.0.0'
-    compile('com.github.ksoichiro:android-observablescrollview:1.6.0') {
+    implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    implementation 'de.hdodenhof:circleimageview:2.0.0'
+    implementation 'com.android.support:recyclerview-v7:22.2.1'
+    implementation('com.github.ksoichiro:android-observablescrollview:1.6.0') {
         exclude group: 'com.android.support', module: 'support-v4'
     }
 
-    compile('com.nostra13.universalimageloader:universal-image-loader:1.9.1')
-    compile('com.nineoldandroids:library:2.4.0')
-    compile('com.jakewharton:butterknife:6.1.0')
-    compile('com.squareup.picasso:picasso:2.5.2')
+    implementation('com.nostra13.universalimageloader:universal-image-loader:1.9.1')
+    implementation('com.nineoldandroids:library:2.4.0')
+    implementation('com.jakewharton:butterknife:6.1.0')
+    implementation('com.squareup.picasso:picasso:2.5.2')
 
-    compile('com.github.castorflex.smoothprogressbar:library:1.1.0')
-    compile('com.mcxiaoke.viewpagerindicator:library:2.4.1') {
+    implementation('com.github.castorflex.smoothprogressbar:library:1.1.0')
+    implementation('com.mcxiaoke.viewpagerindicator:library:2.4.1') {
         exclude group: 'com.android.support', module: 'support-v4'
     }
 
-    compile('com.mcxiaoke.oauthsimple:oauthsimple:2.0.1') {
+    implementation('com.mcxiaoke.oauthsimple:oauthsimple:2.0.1') {
         exclude group: 'org.json', module: 'json'
     }
-    compile('com.mcxiaoke.commons:library:1.0.2') {
+    implementation('com.mcxiaoke.commons:library:1.0.2') {
         exclude group: 'com.android.support', module: 'support-v4'
     }
-    compile 'com.mcxiaoke.photoview:library:1.2.3'
-    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.4'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.mcxiaoke.xbus:bus:1.0.2'
+    implementation 'com.mcxiaoke.photoview:library:1.2.3'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.4'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.mcxiaoke.xbus:bus:1.0.2'
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 android {
     useLibrary 'org.apache.http.legacy'
 
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 22
-        versionName "1.5.5"
-        versionCode 2016042201
+        targetSdkVersion 26
+        versionName "1.5.6"
+        versionCode 201901251
         applicationId "com.mcxiaoke.minicat2"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
     }
 
     signingConfigs {

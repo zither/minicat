@@ -11,8 +11,10 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.text.Editable;
 import android.text.Selection;
 import android.util.Log;
@@ -101,9 +103,13 @@ public class UIWrite extends UIBaseSupport implements LoaderCallbacks<Cursor> {
     @Override
     protected void onResume() {
         super.onResume();
-        if (mLocationProvider != null) {
-            mLocationManager.requestLocationUpdates(mLocationProvider, 0, 0,
-                    mLocationMonitor);
+        try {
+            if (mLocationProvider != null) {
+                //todo 用户可能拒绝定位权限，需要判断授权信息
+                mLocationManager.requestLocationUpdates(mLocationProvider, 0, 0,
+                        mLocationMonitor);
+            }
+        } catch (SecurityException e){
         }
     }
 
@@ -372,17 +378,17 @@ public class UIWrite extends UIBaseSupport implements LoaderCallbacks<Cursor> {
         setContentView(R.layout.ui_write);
         setProgressBarIndeterminateVisibility(false);
 
-        actionMention = (ImageButton) findViewById(R.id.action_mention);
-        actionRecord = (ImageButton) findViewById(R.id.action_record);
-        actionGallery = (ImageButton) findViewById(R.id.action_gallery);
-        actionCamera = (ImageButton) findViewById(R.id.action_camera);
+        actionMention = findViewById(R.id.action_mention);
+        actionRecord = findViewById(R.id.action_record);
+        actionGallery = findViewById(R.id.action_gallery);
+        actionCamera = findViewById(R.id.action_camera);
 
         actionMention.setOnClickListener(this);
         actionRecord.setOnClickListener(this);
         actionGallery.setOnClickListener(this);
         actionCamera.setOnClickListener(this);
 
-        vPhoto = (ViewGroup) findViewById(R.id.photo);
+        vPhoto = findViewById(R.id.photo);
         final GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
@@ -409,10 +415,10 @@ public class UIWrite extends UIBaseSupport implements LoaderCallbacks<Cursor> {
                 return true;
             }
         });
-        vPhotoPreview = (ImageView) findViewById(R.id.photo_show);
+        vPhotoPreview = findViewById(R.id.photo_show);
         vPhotoPreview.setOnClickListener(this);
 
-        tvWriteInfo = (TextView) findViewById(R.id.write_info);
+        tvWriteInfo = findViewById(R.id.write_info);
 
         setTitle("写消息");
 
@@ -491,12 +497,16 @@ public class UIWrite extends UIBaseSupport implements LoaderCallbacks<Cursor> {
 
     private void pickPhotoFromCamera() {
         photo = IOHelper.getPhotoFilePath(this);
-        photoUri = Uri.fromFile(photo);
         if (AppContext.DEBUG) {
-            log("startCameraShot() photoPath=" + photo.getAbsolutePath());
-            log("startCameraShot() photoUri=" + photoUri);
+            //log("startCameraShot() photoPath=" + photo.getAbsolutePath());
         }
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            photoUri = Uri.fromFile(photo);
+        } else {
+            photoUri = FileProvider.getUriForFile(this, "com.mcxiaoke.minicat.fileprovider", photo);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        }
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
         startActivityForResult(Intent.createChooser(intent, "拍摄照片"),
                 REQUEST_PHOTO_CAPTURE);

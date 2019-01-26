@@ -1,12 +1,20 @@
-## 以后真的没时间更新了，有兴趣的可以自己修改
-
 蘑菇饭App
 ===========================
+
+## 说明
+
+这是从 [蘑菇饭App](http://fanfou.com/androidsupport) fork 出来的自用版本，会修正一些在安卓新版本中出现的一些 BUG，目前已经修改的部分：
+
+* 全面屏适配
+* Android N 也可以拍照发状态了
+
+---
+
 一个简洁的饭否App，最新版本是1.5.5，[更新日志](CHANGELOG.md)。
 
-[蘑菇饭App](http://fanfou.com/androidsupport)  
+[蘑菇饭App](http://fanfou.com/androidsupport)
 
-##下载地址
+## 下载地址
 
 * [Google Play](https://play.google.com/store/apps/details?id=com.mcxiaoke.minicat2)  
 * [直接下载](https://github.com/mcxiaoke/minicat/releases/latest)  

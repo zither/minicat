@@ -1,9 +1,7 @@
 蘑菇饭App
 ===========================
 
-## 说明
-
-这是从 [蘑菇饭App](http://fanfou.com/androidsupport) fork 出来的自用版本，会修正一些在安卓新版本中出现的一些 BUG，目前已经修改的部分：
+这是从 [蘑菇饭App](http://fanfou.com/androidsupport) fork 出来的自用版本，会修正一些在安卓新版本中出现的 BUG，目前已经修改的部分：
 
 * 全面屏适配
 * Android N 也可以拍照发状态了

@@ -230,7 +230,7 @@ public class UserModel extends BaseModel {
     }
 
     public String getBirthday() {
-        return birthday;
+        return birthday.replace("0000-", "");
     }
 
     public void setBirthday(String birthday) {

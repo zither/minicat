@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.mcxiaoke.minicat.controller.DataController;
+import com.mcxiaoke.minicat.util.StringHelper;
 
 import java.util.List;
 
@@ -378,6 +379,9 @@ public class StatusModel extends BaseModel {
     }
 
     public String getPhotoImageUrl() {
+        if (!StringHelper.isEmpty(photoImageUrl)) {
+            photoImageUrl = photoImageUrl.replace("200w_200h_1l", "550w_550h_1l_1e_1c");
+        }
         return photoImageUrl;
     }
 

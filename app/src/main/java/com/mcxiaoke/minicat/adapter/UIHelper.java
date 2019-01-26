@@ -34,7 +34,7 @@ public class UIHelper {
 
     public static void setContent(final ItemView view, final StatusModel status) {
         StatusHelper.setItemStatus(view.getContentTextView(), status.getText());
-        view.setPhoto(status.getPhotoThumbUrl(), status.getPhotoLargeUrl());
+        view.setPhoto(status.getPhotoImageUrl(), status.getPhotoLargeUrl());
     }
 
     public static void setMetaInfo(final ItemView view, final StatusModel s) {

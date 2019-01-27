@@ -14,6 +14,7 @@
         <item name="android:background">@drawable/actionbar_background</item>
         <item name="android:backgroundSplit">@drawable/actionbar_background</item>
         <item name="android:indeterminateProgressStyle">@style/ProgressBarStyle</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="ActionBarStyleDark" parent="@android:style/Widget.Holo.ActionBar.Solid">

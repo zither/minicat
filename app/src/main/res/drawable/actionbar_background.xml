@@ -18,17 +18,18 @@
 
     <item>
         <shape>
-            <solid android:color="@color/holo_secondary" />
+            <solid android:color="@color/holo_primary" />
         </shape>
     </item>
 
-    <item android:bottom="2dp">
+    <item android:bottom="0dp">
         <shape>
 
-            <gradient
-                android:startColor="@color/holo_primary"
-                android:endColor="@color/holo_primary"
-                android:angle="270" />
+            <solid android:color="@color/holo_primary" />
+            <!--<gradient-->
+                <!--android:startColor="@color/holo_primary"-->
+                <!--android:endColor="@color/holo_primary"-->
+                <!--android:angle="270" />-->
         </shape>
     </item>
 

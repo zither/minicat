@@ -51,7 +51,7 @@ public class UIPhoto extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         super.onCreate(savedInstanceState);
-        getActionBar().setBackgroundDrawable(new ColorDrawable(0x66333333));
+        getActionBar().setBackgroundDrawable(new ColorDrawable(0x00000000));
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setTitle("查看照片");
         initialize();

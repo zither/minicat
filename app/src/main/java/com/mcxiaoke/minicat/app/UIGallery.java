@@ -22,8 +22,8 @@ public class UIGallery extends Activity {
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         super.onCreate(savedInstanceState);
         getActionBar().setBackgroundDrawable(new ColorDrawable(0x00000000));
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setTitle("查看照片");
+        getActionBar().setDisplayHomeAsUpEnabled(false);
+        getActionBar().setTitle(" ");
         int index = getIntent().getIntExtra("index", 0);
         String userId = getIntent().getStringExtra("userId");
         setContentView(R.layout.ui_gallery);

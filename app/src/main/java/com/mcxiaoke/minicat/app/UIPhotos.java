@@ -25,7 +25,7 @@ public class UIPhotos extends UIBaseSupport {
             return;
         }
         setContentView(R.layout.ui_container);
-        getActionBar().setTitle("相册");
+        getSupportActionBar().setTitle("相册");
         getFragmentManager().beginTransaction().replace(R.id.content, PhotosFragment.newInstance(user)).commit();
     }
 

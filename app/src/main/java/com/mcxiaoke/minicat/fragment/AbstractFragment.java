@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import com.mcxiaoke.minicat.app.UIBaseSupport;
 
+
 /**
  * @author mcxiaoke
  * @version 1.0 2012.01.31

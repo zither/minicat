@@ -83,10 +83,10 @@ public class PhotosFragment extends AbstractFragment implements AdapterView.OnIt
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mArrayAdapter = new GridViewAdapter(getActivity(), R.id.text, mData);
+        mArrayAdapter = new GridViewAdapter(getBaseSupport(), R.id.text, mData);
         mGridView.setOnItemClickListener(this);
         mGridView.setAdapter(mArrayAdapter);
-        getActivity().getActionBar().setTitle(user.getScreenName() + "的相册");
+        getBaseSupport().getSupportActionBar().setTitle(user.getScreenName() + "的相册");
         startRefresh();
     }
 

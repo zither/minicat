@@ -73,7 +73,7 @@ public class UserFavoritesFragment extends BaseTimlineFragment {
         if (AppContext.DEBUG) {
             Log.d(TAG, "doFetch() doGetMore=" + doGetMore + " Paging=" + p);
         }
-        SyncService.getTimeline(getActivity(), StatusModel.TYPE_FAVORITES,
+        SyncService.getTimeline(getBaseSupport(), StatusModel.TYPE_FAVORITES,
                 handler, userId, p);
 
     }

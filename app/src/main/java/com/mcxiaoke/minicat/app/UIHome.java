@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
@@ -26,6 +27,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import com.mcxiaoke.bus.Bus;
 import com.mcxiaoke.bus.annotation.BusReceiver;
 import com.mcxiaoke.minicat.AppContext;
@@ -74,6 +77,7 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
     private ViewPager mViewPager;
     private PagerTabStrip mPagerTabStrip;
     private HomePagesAdapter mPagesAdapter;
+    private FloatingActionButton mFab;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mDrawerTitle;
@@ -190,7 +194,11 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         if (item.getItemId() == R.id.menu_write) {
             onMenuWriteClick();
             return true;
+        } else if (item.getItemId() == R.id.menu_search) {
+            onMenuSearchClick();
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -322,8 +330,8 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
     protected void setLayout() {
         setContentView(R.layout.ui_home);
         setProgressBarIndeterminateVisibility(false);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_drawer);
         setTitle(R.string.page_title_home);
         mDrawerTitle = "@" + AppContext.getScreenName();
         mTitle = getTitle();
@@ -339,13 +347,13 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(mDrawerTitle);
+                getSupportActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
-                getActionBar().setTitle(mTitle);
+                getSupportActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
 
@@ -382,6 +390,15 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         FragmentManager fm = getFragmentManager();
         mMenuFragment = MenuFragment.newInstance();
         fm.beginTransaction().replace(R.id.left_drawer, mMenuFragment).commit();
+
+        mFab = findViewById(R.id.fab);
+        mFab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                UIController.showWrite(mContext);
+            }
+        });
+
     }
 
     /**
@@ -417,7 +434,7 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        getSupportActionBar().setTitle(mTitle);
     }
 
     private void switchContent(AbstractFragment fragment) {
@@ -548,13 +565,13 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
 
     @Override
     public void onDrawerOpened(View drawerView) {
-        getActionBar().setTitle(mDrawerTitle);
+        getSupportActionBar().setTitle(mDrawerTitle);
         invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
     }
 
     @Override
     public void onDrawerClosed(View drawerView) {
-        getActionBar().setTitle(mTitle);
+        getSupportActionBar().setTitle(mTitle);
         invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
     }
 

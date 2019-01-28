@@ -5,6 +5,7 @@
         <item name="android:logo">@drawable/ic_logo</item>
         <item name="android:textColor">@color/solid_white</item>
         <item name="android:background">@drawable/actionbar_background</item>
+        <item name="background">@drawable/actionbar_background</item>
         <item name="android:backgroundSplit">@drawable/actionbar_background</item>
         <item name="android:elevation">0dp</item>
     </style>
@@ -34,4 +35,21 @@
 
     <style name="AppTheme.Fullscreen" parent="android:Theme.Material.NoActionBar.Fullscreen" />
 
+    <style name="AppTheme.Compact" parent="@style/Theme.AppCompat">
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_item_selector</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="colorPrimaryDark">@color/holo_primary</item>
+    </style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@color/holo_primary</item>
+        <item name="background">@color/holo_primary</item>
+        <item name="elevation">0dp</item>
+        <item name="titleTextStyle">@style/HoloTitleText</item>
+    </style>
+    <style name="HoloTitleText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
 </resources>

@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import com.mcxiaoke.minicat.AppContext;
 import com.mcxiaoke.minicat.R;
+import com.mcxiaoke.minicat.app.UIBaseSupport;
 import com.mcxiaoke.minicat.controller.CacheController;
 import com.mcxiaoke.minicat.controller.UIController;
 import com.mcxiaoke.minicat.dao.model.UserModel;
@@ -352,9 +353,9 @@ public class ProfileFragment extends AbstractFragment
 
     private void updateTitle(UserModel user) {
         if (user != null && useMenu) {
-            Activity activity = getActivity();
+            Activity activity = getBaseSupport();
             if (activity != null) {
-                activity.getActionBar().setTitle("@" + user.getScreenName());
+                ((UIBaseSupport) activity).getSupportActionBar().setTitle("@" + user.getScreenName());
             }
         }
     }

@@ -43,4 +43,10 @@
 
     <style name="AppTheme.Fullscreen" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
 
+    <style name="AppTheme.Compact" parent="@style/Theme.AppCompat">
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_item_selector</item>
+    </style>
+
 </resources>

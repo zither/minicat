@@ -19,3 +19,4 @@ project.properties
 *.iml
 .DS_Store
 out/
+app/release

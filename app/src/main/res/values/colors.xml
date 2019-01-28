@@ -62,6 +62,7 @@
     <!--<color name="holo_secondary">#0288d1</color>-->
     <color name="holo_secondary">#ff28a5c0</color>
     <color name="holo_secondary_translucent">#8028a5c0</color>
+    <color name="holo_secondary_transparent">#4028a5c0</color>
     <color name="holo_highlight">#53933f</color>
     <!-- below from google play app -->
     <color name="apps_primary">#ffb2cb39</color>

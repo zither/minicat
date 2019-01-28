@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
@@ -27,6 +28,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 import android.widget.Toast;
 
 import com.mcxiaoke.bus.Bus;
@@ -76,6 +78,7 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
     private Fragment mMenuFragment;
     private ViewPager mViewPager;
     private PagerTabStrip mPagerTabStrip;
+    private TabLayout mTabLayout;
     private HomePagesAdapter mPagesAdapter;
     private FloatingActionButton mFab;
     private DrawerLayout mDrawerLayout;
@@ -376,13 +379,19 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         mViewPager.setAdapter(mPagesAdapter);
         mViewPager.addOnPageChangeListener(this);
 
+
         final int highlightColor = getResources().getColor(R.color.holo_secondary);
-        mPagerTabStrip = (PagerTabStrip) findViewById(R.id.viewpager_strip);
-        mPagerTabStrip.setBackgroundResource(R.color.background_secondary);
-        mPagerTabStrip.setNonPrimaryAlpha(0.4f);
-        mPagerTabStrip.setDrawFullUnderline(false);
-        mPagerTabStrip.setTabIndicatorColor(highlightColor);
-        mPagerTabStrip.setTextColor(highlightColor);
+
+        mTabLayout = findViewById(R.id.sliding_tabs);
+        mTabLayout.setupWithViewPager(mViewPager);
+
+
+        //mPagerTabStrip = (PagerTabStrip) findViewById(R.id.viewpager_strip);
+        //mPagerTabStrip.setBackgroundResource(R.color.background_secondary);
+        //mPagerTabStrip.setNonPrimaryAlpha(0.4f);
+        //mPagerTabStrip.setDrawFullUnderline(false);
+        //mPagerTabStrip.setTabIndicatorColor(highlightColor);
+        //mPagerTabStrip.setTextColor(highlightColor);
 
         setHomeTitle(mCurrentPage);
         mCurrentFragment = mPagesAdapter.getItem(mCurrentPage);

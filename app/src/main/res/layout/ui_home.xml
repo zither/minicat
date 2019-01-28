@@ -14,16 +14,33 @@
         android:layout_height="match_parent">
 
 
+
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.v4.view.PagerTabStrip
-                android:id="@+id/viewpager_strip"
+            <android.support.design.widget.TabLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/sliding_tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp" />
+                android:background="@color/white"
+                app:tabBackground="@drawable/tab_indicator"
+                app:tabTextColor="@color/solid_gray"
+                app:tabSelectedTextColor="@color/holo_primary_dark"
+                app:tabIndicatorColor="@color/holo_primary_transparent"
+                app:tabPaddingStart="40dp"
+                app:tabPaddingEnd="40dp"
+                app:tabMaxWidth="200dp"
+                app:tabGravity="center"
+                app:tabMode="fixed" />
+
+            <!--<android.support.v4.view.PagerTabStrip-->
+                <!--android:id="@+id/viewpager_strip"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="4dp" />-->
         </android.support.v4.view.ViewPager>
 
         <android.support.design.widget.FloatingActionButton

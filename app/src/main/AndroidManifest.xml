@@ -234,6 +234,7 @@
             android:name="com.mcxiaoke.minicat.app.UIConversation"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
+            android:theme="@style/AppTheme.Compact"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"
             android:parentActivityName="com.mcxiaoke.minicat.app.UIHome">
